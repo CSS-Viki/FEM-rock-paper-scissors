@@ -108,13 +108,29 @@ section {
   box-shadow: 0 0 0px 20px rgb(83, 125, 231);
   margin-right: 15px;
 }
+.game__moves .icon__paper.animate {
+  box-shadow: 0 0 0px 20px rgb(83, 125, 231), 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+  margin-right: 15px;
+}
 .game__moves .icon__scissors {
   box-shadow: 0 0 0px 20px orange;
   margin-left: 15px;
 }
+.game__moves .icon__scissors.animate {
+  box-shadow: 0 0 0px 20px orange, 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+  margin-right: 15px;
+}
 .game__moves .icon__rock {
   box-shadow: 0 0 0px 20px red;
 }
+.game__moves .icon__rock.animate {
+  box-shadow: 0 0 0px 20px red, 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+  margin-right: 15px;
+}
+
 .game__results {
   display: none;
   grid-template-columns: repeat(3, 1fr);
@@ -128,7 +144,8 @@ section {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  
 }
 .game__results > div:nth-of-type(2) {
   display: flex;
@@ -156,6 +173,20 @@ section {
 }
 .game__results > div:nth-of-type(2) > button:hover {
   color: red;
+}
+.game__results .animate {
+  animation: zoom 1000ms ease-in forwards;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .game__button {
   position: absolute;

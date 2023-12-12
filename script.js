@@ -11,6 +11,7 @@ const houseMove = document.querySelector("#house-move");
 const play = document.querySelector("#play-again");
 const gameResults = document.querySelector(".game__results");
 const gameMoves = document.querySelector(".game__moves");
+const outcome = document.querySelector("#outcome");
 
 // Opening rules modal
 rulesBtn.addEventListener("click", () => {
@@ -98,13 +99,15 @@ function playGame(playerMove) {
   localStorage.setItem("score", JSON.stringify(score));
 
   resultStatus.innerHTML = result;
+
   yourMove.innerHTML = `<div class="game__moves">
   <div class="icon__${playerMove}">
   <img src="./images/icon-${playerMove}.svg" />
   </div>
   </div>`;
+
   houseMove.innerHTML = `<div class="game__moves">
-  <div class="icon__${computerMove}">
+  <div class="icon__${computerMove} animate">
   <img src="./images/icon-${computerMove}.svg" />
   </div>
   </div>`;
