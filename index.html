@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <section>
+      <div class="game__details">
+        <div class="game__moves-list">
+          <h1>ROCK</h1>
+          <h1>PAPER</h1>
+          <h1>SCISSORS</h1>
+        </div>
+
+        <div class="game__score">
+          <h5>SCORE</h5>
+          <span id="score">0</span>
+        </div>
+      </div>
+
+      <div class="game__moves">
+        <img src="./images/bg-triangle.svg" alt="" />
+
+        <div class="icon__paper">
+          <img src="./images/icon-paper.svg" alt="" />
+        </div>
+        <div class="icon__scissors">
+          <img src="./images/icon-scissors.svg" alt="" />
+        </div>
+        <div class="icon__rock">
+          <img src="./images/icon-rock.svg" alt="" />
+        </div>
+      </div>
+
+      <div class="game__results">
+        <div>
+          <p>You Picked</p>
+          <div id="your-move"></div>
+        </div>
+        <div>
+          <h1 id="results">You Lose</h1>
+          <button id="play-again">Play Again</button>
+        </div>
+        <div>
+          <p>The House Picked</p>
+          <div id="house-move"></div>
+        </div>
+      </div>
+
+      <div class="game__rules">
+        <button class="game__button" id="rules">RULES</button>
+      </div>
+
+      <!-- CREDITS -->
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://twitter.com/vykiddeh_" target="_blank">Viki Wainaina</a
+        >.
+      </div>
+    </section>
+
+    <!-- RULES MODAL -->
+    <div class="modal__rules">
+      <div class="flex-items">
+        <h1>RULES</h1>
+        <img src="./images/icon-close.svg" alt="" id="close-rules" />
+      </div>
+
+      <div>
+        <img src="./images/image-rules.svg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
