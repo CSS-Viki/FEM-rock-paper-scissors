@@ -1,5 +1,6 @@
 const scoreCount = document.getElementById("score");
 const rulesBtn = document.getElementById("rules");
+const reset = document.querySelector(".reset");
 const modal = document.querySelector(".modal__rules");
 const closeModal = document.getElementById("close-rules");
 const paper = document.querySelector(".icon__paper img");
@@ -24,7 +25,7 @@ closeModal.addEventListener("click", () => {
   document.querySelector("section").style.opacity = 1;
 });
 
-// Close modal when you click outside
+// Close modal when you click outside it
 window.addEventListener("click", (e) => {
   // Check if click was outside modal and not on modal or button
   if (!e.target.closest(".modal") && !e.target.closest("#rules")) {
@@ -39,21 +40,19 @@ window.addEventListener("click", (e) => {
 let score = JSON.parse(localStorage.getItem("score")) || 0;
 updateScoreElement();
 
+const playerPicks = {
+  paper: "./images/icon-paper.svg",
+  scissors: "./images/icon-scissors.svg",
+  rock: "./images/icon-rock.svg",
+};
+
 // Computer move
 function pickComputerMove() {
-  let randomNumber = Math.random();
+  const computerMoveOptions = ["paper", "rock", "scissors"];
+  let computerMovePicked =
+    computerMoveOptions[Math.floor(Math.random() * computerMoveOptions.length)];
 
-  let computerMove = "";
-
-  if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    computerMove = "rock";
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = "scissors";
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = "paper";
-  }
-
-  return computerMove;
+  return computerMovePicked;
 }
 
 function playGame(playerMove) {
@@ -66,6 +65,7 @@ function playGame(playerMove) {
       result = "Tie";
     } else if (computerMove === "rock") {
       result = "You Win";
+      score += 1;
     } else if (computerMove === "scissors") {
       result = "You Lose";
     }
@@ -76,6 +76,7 @@ function playGame(playerMove) {
       result = "You Lose";
     } else if (computerMove === "scissors") {
       result = "You Win";
+      score += 1;
     }
   } else if (playerMove === "scissors") {
     if (computerMove === "scissors") {
@@ -84,15 +85,8 @@ function playGame(playerMove) {
       result = "You Lose";
     } else if (computerMove === "paper") {
       result = "You Win";
+      score += 1;
     }
-  }
-
-  if (result === "You Win") {
-    score += 1;
-  } else if (result === "You Lose") {
-    score -= 1;
-  } else if (result === "Tie") {
-    score += 0;
   }
 
   // localStorage only supports strings => JSON.stringify does that
@@ -102,25 +96,34 @@ function playGame(playerMove) {
 
   yourMove.innerHTML = `<div class="game__moves">
   <div class="icon__${playerMove}">
-  <img src="./images/icon-${playerMove}.svg" />
+  <img src=${playerPicks[playerMove]} />
   </div>
   </div>`;
 
   houseMove.innerHTML = `<div class="game__moves">
   <div class="icon__${computerMove} animate">
-  <img src="./images/icon-${computerMove}.svg" />
+  <img src=${playerPicks[computerMove]} />
   </div>
   </div>`;
 
   updateScoreElement();
 }
+
 function updateScoreElement() {
   scoreCount.innerHTML = score;
 }
+
+function resetScore() {
+  score = 0; // Set the score to 0
+  localStorage.setItem("score", JSON.stringify(score)); // Save the updated score to local storage
+  updateScoreElement(); // Update the score element in the UI
+}
+
 function playModes() {
   gameResults.classList.add("active");
   gameMoves.classList.add("inactive");
 }
+
 function playAgain() {
   gameResults.classList.remove("active");
   gameMoves.classList.remove("inactive");
@@ -141,3 +144,4 @@ rock.addEventListener("click", () => {
   playModes();
   play.addEventListener("click", playAgain);
 });
+reset.addEventListener("click", resetScore);
