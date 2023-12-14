@@ -13,7 +13,11 @@ const play = document.querySelector("#play-again");
 const gameResults = document.querySelector(".game__results");
 const gameMoves = document.querySelector(".game__moves");
 const outcome = document.querySelector("#outcome");
+const back = document.querySelector(".game__rules button:last-child");
 
+back.addEventListener("click", () => {
+  window.location.href = "index.html";
+});
 // Opening rules modal
 rulesBtn.addEventListener("click", () => {
   modal.classList.add("open-popup");

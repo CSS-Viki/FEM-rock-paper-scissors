@@ -203,6 +203,9 @@ section {
 .game__rules .reset {
   top: 0;
 }
+.game__rules button:last-child {
+  left: 0;
+}
 
 .attribution {
   text-align: center;

@@ -141,7 +141,7 @@ section {
   box-shadow: 0 0 0px 20px rgb(90, 243, 243), 0 0 0px 50px rgba(31, 55, 86),
     0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
 }
-.game__moves .icon__lizard{
+.game__moves .icon__lizard {
   box-shadow: 0 0 0px 20px rgb(251, 78, 251);
 }
 .game__moves .icon__lizard.animate {
@@ -216,14 +216,17 @@ section {
   border-radius: 8px;
   cursor: pointer;
 }
-.game__rules .reset {
+.game__rules .game__button .reset {
   top: 0;
+}
+.game__rules button:last-child {
+  left: 0;
 }
 
 .attribution {
   text-align: center;
   color: #fff;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 .attribution a {
   color: var(--Header-Outline);
@@ -273,7 +276,7 @@ section {
     margin-block-start: 50px;
   }
   .game__rules .game__button:nth-child(1) {
-    top: 65px;
+    top: 95px;
     right: 0;
     margin-block-start: 50px;
   }
