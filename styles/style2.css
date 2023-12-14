@@ -215,6 +215,7 @@ section {
   padding: 0.6em 2em;
   border-radius: 8px;
   cursor: pointer;
+  width: 100%;
 }
 .game__rules .game__button .reset {
   top: 0;
@@ -274,6 +275,7 @@ section {
   }
   .game__rules .game__button {
     margin-block-start: 50px;
+
   }
   .game__rules .game__button:nth-child(1) {
     top: 95px;
