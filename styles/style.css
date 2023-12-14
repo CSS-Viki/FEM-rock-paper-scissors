@@ -212,6 +212,7 @@ section {
 .attribution {
   text-align: center;
   color: #fff;
+  font-size: .8rem;
 }
 .attribution a {
   color: var(--Header-Outline);
@@ -261,9 +262,8 @@ section {
     margin-block-start: 50px;
   }
   .game__rules .game__button:nth-child(1) {
-    top: 65px;
+    top: 70px;
     right: 0;
-    margin-block-start: 50px;
   }
   .modal__rules {
     border-radius: 0;

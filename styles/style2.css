@@ -216,9 +216,8 @@ section {
   border-radius: 8px;
   cursor: pointer;
   display: flex;
-  
 }
-.game__rules .game__button .reset {
+.game__rules .reset {
   top: 0;
 }
 .game__rules .game__button:last-child {
@@ -277,12 +276,10 @@ section {
   }
   .game__rules .game__button {
     margin-block-start: 50px;
-
   }
   .game__rules .game__button:nth-child(1) {
     top: 95px;
     right: 0;
-    margin-block-start: 50px;
   }
   .modal__rules {
     border-radius: 0;
