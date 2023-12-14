@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --font-family-default: "Barlow Semi Condensed", sans-serif;
+
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+html {
+  font-family: var(--font-family-default);
+}
+body {
+  background-image: linear-gradient(
+    180deg,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  background-repeat: no-repeat;
+  background-position: cover;
+  height: 100vh;
+}
+
+@media (max-width: 660px) {
+  body {
+    padding: 2em;
+    height: 100%;
+  }
+}
+body > div {
+  border: 2px solid var(--Score-Text);
+  padding: 1.5em;
+  border-radius: 8px;
+  max-width: 700px;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  margin: 150px auto;
+}
+body > div > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body > div > div > span {
+  color: #fff;
+  font-size: 2rem;
+  margin-block-end: 20px;
+}
+body > div > div > button {
+  display: flex;
+  gap: 20px;
+  align-self: flex-start;
+  padding: 0.7em 2em;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+body > div > div > button:hover {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+body > div > div > button > img {
+  width: 32px;
+  height: 32px;
+}

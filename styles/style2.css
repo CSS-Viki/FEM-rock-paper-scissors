@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --font-family-default: "Barlow Semi Condensed", sans-serif;
+
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+html {
+  font-family: var(--font-family-default);
+}
+body {
+  background-image: linear-gradient(
+    180deg,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  background-repeat: no-repeat;
+  background-position: cover;
+  padding: 1.5em;
+}
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.game__details {
+  border: 2px solid #fff;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 1.2em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.game__details .game__moves-list h1 {
+  line-height: 0.8;
+  color: #fff;
+}
+.game__details .game__score {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.55em 1.75em;
+  border-radius: 6px;
+}
+.game__details .game__score h5 {
+  color: var(--Score-Text);
+  font-size: 0.7rem;
+  letter-spacing: 1.4px;
+}
+.game__details .game__score span {
+  color: var(--Header-Outline);
+  font-size: 2rem;
+}
+.game__moves {
+  position: relative;
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 350px;
+  margin-block-start: 50px;
+}
+.game__moves.inactive {
+  display: none;
+}
+.game__moves > img:first-child {
+  position: absolute;
+  z-index: -1;
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  transform: rotate(180deg);
+}
+
+.game__moves > div {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 1.1em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.game__moves > div:hover {
+  transform: translateY(-10%);
+}
+.game__moves > div > img {
+  width: 48px;
+  height: 48px;
+}
+.game__moves .icon__paper {
+  box-shadow: 0 0 0px 20px rgb(83, 125, 231);
+  margin-right: 15px;
+}
+.game__moves .icon__paper.animate {
+  box-shadow: 0 0 0px 20px rgb(83, 125, 231), 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+}
+.game__moves .icon__scissors {
+  box-shadow: 0 0 0px 20px orange;
+  margin-left: 15px;
+}
+.game__moves .icon__scissors.animate {
+  box-shadow: 0 0 0px 20px orange, 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+}
+.game__moves .icon__rock {
+  box-shadow: 0 0 0px 20px red;
+}
+.game__moves .icon__rock.animate {
+  box-shadow: 0 0 0px 20px red, 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+}
+.game__moves .icon__spock {
+  box-shadow: 0 0 0px 20px rgb(90, 243, 243);
+}
+.game__moves .icon__spock.animate {
+  box-shadow: 0 0 0px 20px rgb(90, 243, 243), 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+}
+.game__moves .icon__lizard{
+  box-shadow: 0 0 0px 20px rgb(251, 78, 251);
+}
+.game__moves .icon__lizard.animate {
+  box-shadow: 0 0 0px 20px rgb(251, 78, 251), 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+}
+
+.game__results {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin: 0 auto;
+}
+.game__results.active {
+  display: grid;
+}
+.game__results > div > p {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.game__results > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.game__results > div:nth-of-type(2) > h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.game__results > div:nth-of-type(2) > button {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  padding: 0.6em 3em;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+.game__results > div:nth-of-type(2) > button:hover {
+  color: red;
+}
+.game__results .animate {
+  animation: zoom 1000ms ease-in forwards;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.game__rules .game__button {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.6em 2em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.game__rules .reset {
+  top: 0;
+}
+
+.attribution {
+  text-align: center;
+  color: #fff;
+  font-size: .8rem;
+}
+.attribution a {
+  color: var(--Header-Outline);
+}
+
+/* MODAL RULES */
+.modal__rules {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  background-color: #fff;
+  padding: 1.4em;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  z-index: 999;
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal__rules .flex-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 0 40px;
+}
+.modal__rules .flex-items > img {
+  cursor: pointer;
+}
+.modal__rules .flex-items h1 {
+  color: var(--Dark-Text);
+}
+
+@media (max-width: 600px) {
+  body {
+    height: 100%;
+  }
+  section {
+    gap: 100px;
+  }
+  .game__rules .game__button {
+    margin-block-start: 50px;
+  }
+  .game__rules .game__button:nth-child(1) {
+    top: 65px;
+    right: 0;
+    margin-block-start: 50px;
+  }
+  .modal__rules {
+    border-radius: 0;
+    max-width: 100vw; /* take the entire viewport width*/
+  }
+  .modal__rules.open-popup {
+    position: fixed;
+    inset: 0; /* top, bottom, left, right === 0 */
+    width: 100vw;
+    transform: none;
+  }
+  .modal__rules .flex-items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    margin-block: 0 80px;
+  }
+  .modal__rules > div:last-child img {
+    margin: 0 auto;
+  }
+  .modal__rules .flex-items > img {
+    position: absolute;
+    bottom: 1.5rem; /* placing close  btn at the bottom */
+  }
+  .game__results {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 50px;
+  }
+}
