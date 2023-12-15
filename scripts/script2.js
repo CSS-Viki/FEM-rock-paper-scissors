@@ -15,7 +15,7 @@ const play = document.querySelector("#play-again");
 const gameResults = document.querySelector(".game__results");
 const gameMoves = document.querySelector(".game__moves");
 const outcome = document.querySelector("#outcome");
-const back = document.querySelector(".game__rules button:last-child");
+const back = document.querySelector(".back");
 
 back.addEventListener("click", () => {
   window.location.href = "index.html";

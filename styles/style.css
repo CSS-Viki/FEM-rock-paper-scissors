@@ -102,6 +102,10 @@ section {
   width: 48px;
   height: 48px;
 }
+.game__moves > img:first-child {
+  position: absolute;
+  z-index: -1;
+}
 .game__moves .icon__paper {
   box-shadow: 0 0 0px 20px rgb(83, 125, 231);
   margin-right: 15px;
@@ -210,12 +214,11 @@ section {
 .game__rules .reset {
   top: 0;
 }
-.game__rules .game__button:last-child {
-  top: 0;
-  left: 0;
-  border: none;
+.back {
+  color: #fff;
   text-decoration: underline;
-  letter-spacing: 1.2px;
+  cursor: pointer;
+  /* margin-top: 20px; */
 }
 .attribution {
   text-align: center;

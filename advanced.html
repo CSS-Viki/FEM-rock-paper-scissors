@@ -17,16 +17,13 @@
 
     <style>
       .game__moves > img:first-child {
-        position: absolute;
-        z-index: -1;
         width: 250px;
         height: 250px;
         top: 10%;
         transform: rotate(180deg);
       }
       @media (max-width: 600px) {
-        .game__rules .game__button:nth-child(1),
-        .game__rules .game__button:last-child {
+        .game__rules .reset {
           top: 95px;
         }
       }
@@ -88,7 +85,7 @@
       <div class="game__rules">
         <button class="game__button reset">RESET SCORE</button>
         <button class="game__button" id="rules">RULES</button>
-        <button class="game__button">BACK</button>
+        <span class="back">BACK</span>
       </div>
 
       <!-- CREDITS -->
