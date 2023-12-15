@@ -32,8 +32,6 @@ If the player wins, they gain 1 point. If the computer wins, the player loses on
 - Rock beats Scissors
 - Scissors beats Paper
 
-Yet to do this part⤵️
-
 #### Bonus
 
 - Scissors beats Paper
@@ -49,5 +47,6 @@ Yet to do this part⤵️
 
 Not sure what Rock, Paper, Scissors, Lizard, Spock is? [Check out this clip from The Big Bang Theory](https://www.youtube.com/watch?v=iSHPVCBsnLw).
 
+Made with ❤️ by [Viki Wainaina](https://twitter.com/vykiddeh_)
 
 **Have fun building!** 🚀

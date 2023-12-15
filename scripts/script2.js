@@ -94,8 +94,7 @@ function playGame(playerMove) {
     } else if (computerMove === "lizard") {
       result = "You Win";
     } else if (computerMove === "spock") {
-      result = "You Win";
-      score += 1;
+      result = "You Lose";
     }
   } else if (playerMove === "scissors") {
     if (computerMove === "scissors") {
@@ -116,7 +115,8 @@ function playGame(playerMove) {
     } else if (computerMove === "rock") {
       result = "You Lose";
     } else if (computerMove === "paper") {
-      result = "You Lose";
+      result = "You Win";
+      score += 1;
     } else if (computerMove === "scissors") {
       result = "You Lose";
     } else if (computerMove === "spock") {

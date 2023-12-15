@@ -11,9 +11,25 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./styles/style2.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/script2.js" defer></script>
-    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <title>Advanced | Rock, Paper, Scissors</title>
+
+    <style>
+      .game__moves > img:first-child {
+        position: absolute;
+        z-index: -1;
+        width: 250px;
+        height: 250px;
+        top: 10%;
+        transform: rotate(180deg);
+      }
+      @media (max-width: 600px) {
+        .game__rules .game__button:nth-child(1) {
+          top: 95px;
+        }
+      }
+    </style>
   </head>
   <body>
     <section>

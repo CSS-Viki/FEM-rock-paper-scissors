@@ -14,6 +14,22 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/script.js" defer></script>
     <title>Easy | Rock, Paper, Scissors</title>
+
+    <style>
+      .game__moves > img:first-child {
+        position: absolute;
+        z-index: -1;
+        width: 180px;
+        height: 180px;
+        top: 15%;
+      }
+
+      @media (max-width: 600px) {
+        .game__rules .game__button:nth-child(1) {
+          top: 70px;
+        }
+      }
+    </style>
   </head>
   <body>
     <section>

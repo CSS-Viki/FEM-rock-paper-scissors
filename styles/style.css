@@ -34,7 +34,6 @@ body {
   background-repeat: no-repeat;
   background-position: cover;
   padding: 1.5em;
-  height: 100vh;
 }
 section {
   position: relative;
@@ -82,21 +81,15 @@ section {
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 350px;
+  margin-block-start: 50px;
 }
 .game__moves.inactive {
   display: none;
 }
-.game__moves > img:first-child {
-  position: absolute;
-  z-index: -1;
-  width: 180px;
-  height: 180px;
-  top: 15%;
-}
-
 .game__moves > div {
   background-color: #fff;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding: 1.1em;
   border-radius: 50%;
   cursor: pointer;
@@ -130,6 +123,20 @@ section {
 }
 .game__moves .icon__rock.animate {
   box-shadow: 0 0 0px 20px red, 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+}
+.game__moves .icon__spock {
+  box-shadow: 0 0 0px 20px rgb(90, 243, 243);
+}
+.game__moves .icon__spock.animate {
+  box-shadow: 0 0 0px 20px rgb(90, 243, 243), 0 0 0px 50px rgba(31, 55, 86),
+    0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
+}
+.game__moves .icon__lizard {
+  box-shadow: 0 0 0px 20px rgb(251, 78, 251);
+}
+.game__moves .icon__lizard.animate {
+  box-shadow: 0 0 0px 20px rgb(251, 78, 251), 0 0 0px 50px rgba(31, 55, 86),
     0 0 0px 80px rgba(31, 55, 86, 0.7), 0 0 0px 110px rgba(31, 55, 86, 0.3);
 }
 
@@ -199,20 +206,20 @@ section {
   padding: 0.6em 2em;
   border-radius: 8px;
   cursor: pointer;
-  display: flex;
 }
 .game__rules .reset {
   top: 0;
 }
 .game__rules .game__button:last-child {
   left: 0;
-  align-self: flex-start;
+  border: none;
+  text-decoration: underline;
+  letter-spacing: 1.2px;
 }
-
 .attribution {
   text-align: center;
   color: #fff;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 .attribution a {
   color: var(--Header-Outline);
@@ -262,7 +269,6 @@ section {
     margin-block-start: 50px;
   }
   .game__rules .game__button:nth-child(1) {
-    top: 70px;
     right: 0;
   }
   .modal__rules {
